@@ -1,6 +1,6 @@
 FROM python:alpine
 
-RUN if [[ `arch` != "X86_64" ]];then apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
+RUN if [[ `arch` -ne "X86_64" ]];then apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
 
 #RUN case `arch` in "aarch64") apk add --no-cache gcc g++;; "armv7l") apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;;esac
 
