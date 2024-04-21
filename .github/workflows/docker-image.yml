@@ -8,6 +8,7 @@
 name: DockerHub CI
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
