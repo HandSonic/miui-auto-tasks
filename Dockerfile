@@ -1,6 +1,6 @@
 FROM python:alpine
 
-
+RUN apk add --no-cache gcc g++  rust
 RUN pip install cryptography
 
 WORKDIR /srv
