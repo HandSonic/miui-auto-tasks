@@ -1,6 +1,6 @@
 FROM python:alpine
 
-RUN apk add --no-cache gcc g++  rust  libffi-dev  openssl-dev  python3-dev
+RUN apk add --no-cache gcc g++  rust  libffi-dev  openssl-dev  python3-dev cargo
 RUN pip install cryptography
 
 WORKDIR /srv
