@@ -1,8 +1,7 @@
 FROM python:alpine
 
-RUN apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust  cargo pkgconfig libressl-dev
 
-RUN pip install --no-cache-dir pdm
+RUN pip install cryptography
 
 WORKDIR /srv
 
