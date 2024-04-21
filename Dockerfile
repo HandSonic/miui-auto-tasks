@@ -18,7 +18,7 @@ RUN pdm install --prod && \
 
 #RUN  case `arch` in  "aarch64") apk del  gcc g++;; "armv7l") apk del gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;;esac
 
-RUN if [[ `arch` != "X86_64" ]];then apk del  gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
+RUN if [[ `arch` -ne "X86_64" ]];then apk del  gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
 
 VOLUME ["/srv/data", "/srv/logs"]
 
