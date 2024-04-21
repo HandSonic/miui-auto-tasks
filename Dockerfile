@@ -1,10 +1,10 @@
 FROM python:alpine
 
-RUN apt  --no-cache gcc g++ musl-dev python3-dev libffi-dev rust cargo pkgconfig libressl-dev
+RUN apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust cargo pkgconfig libressl-dev
 
 RUN arch
 RUN uname -m
-RUN if [[ `arch` == "armhf" ]];then echo  apt  --no-cache rustc;fi
+RUN if [[ `arch` == "armhf" ]];then echo  apk add  --no-cache rustc;fi
 RUN pip install --no-cache-dir pdm
 
 WORKDIR /srv
