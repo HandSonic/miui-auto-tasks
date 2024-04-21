@@ -4,7 +4,7 @@ RUN apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust cargo pkgcon
 
 RUN arch
 RUN uname -m
-RUN if [[ `arch` == "armhf" ]];then echo  apk add  --no-cache rustc;fi
+RUN if [[ `arch` == "armv7l" ]];then echo  apk add  --no-cache rustc;fi
 RUN pip install --no-cache-dir pdm
 
 WORKDIR /srv
