@@ -3,7 +3,7 @@ FROM python:alpine
 #RUN if [[ `arch` == "armv7l" ]];then apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
 RUN echo `arch`
 
-RUN case `arch` in "arm64") apk add --no-cache gcc g++;; "armv7l") apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;;esac
+RUN case `arch` in "aarch64") apk add --no-cache gcc g++;; "armv7l") apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;;esac
 
 RUN pip install --no-cache-dir pdm
 
