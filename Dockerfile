@@ -1,6 +1,5 @@
-FROM python:alpine
+FROM ubuntu:18.04
 
-RUN apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust rustc cargo pkgconfig libressl-dev
 
 RUN pip install --no-cache-dir pdm
 
