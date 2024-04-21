@@ -1,6 +1,6 @@
 FROM python:alpine
 
-SHELL [“/bin/bash”, “-c”]
+SHELL ["/bin/bash", "-c"]
 
 RUN if [[ `arch` -ne "X86_64" ]];then apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
 
