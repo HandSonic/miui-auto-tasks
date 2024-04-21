@@ -1,6 +1,6 @@
 FROM python:alpine
 
-RUN bash if [[ `arch` -ne "X86_64" ]];then apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
+RUN /bin/bash if [[ `arch` -ne "X86_64" ]];then apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
 
 #RUN case `arch` in "aarch64") apk add --no-cache gcc g++;; "armv7l") apk add --no-cache gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;;esac
 
@@ -18,7 +18,7 @@ RUN pdm install --prod && \
 
 #RUN  case `arch` in  "aarch64") apk del  gcc g++;; "armv7l") apk del gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;;esac
 
-RUN bash if [[ `arch` -ne "X86_64" ]];then apk del  gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
+RUN /bin/bash if [[ `arch` -ne "X86_64" ]];then apk del  gcc g++ musl-dev python3-dev libffi-dev rust openssl-dev cargo pkgconfig;fi
 
 VOLUME ["/srv/data", "/srv/logs"]
 
