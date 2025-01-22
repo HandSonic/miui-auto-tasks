@@ -60,23 +60,23 @@ class Account:
 
     # pylint: disable=too-many-arguments, too-many-positional-arguments, too-many-locals
     def __init__(
-        self,
-        uid="100000",
-        password="",
-        cookies=None,
-        login_user_agent="",
-        user_agent="Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Safari/537.36",
-        device="",
-        device_model="",
-        CheckIn=False,
-        BrowseUserPage=False,
-        BrowsePost=False,
-        BrowseVideoPost=False,
-        ThumbUp=False,
-        BrowseSpecialPage=False,
-        BoardFollow=False,
-        CarrotPull=False,
-        WxSign=False,
+            self,
+            uid="100000",
+            password="",
+            cookies=None,
+            login_user_agent="",
+            user_agent="Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Safari/537.36",
+            device="",
+            device_model="",
+            CheckIn=False,
+            BrowseUserPage=False,
+            BrowsePost=False,
+            BrowseVideoPost=False,
+            ThumbUp=False,
+            BrowseSpecialPage=False,
+            BoardFollow=False,
+            CarrotPull=False,
+            WxSign=False,
     ):
         self.uid = uid
         """账户ID 非账户用户名或手机号"""
@@ -134,15 +134,32 @@ class OnePush:
             "userid": "",
         }
 
+# class Ttocr:
+#     """ttorc参数设置"""
+
+#     def __init__(self, app_key="", createTask_url="", createTask_data=None, getTaskResult_url=""):
+#         self.app_key = app_key
+#         self.createTask_url = createTask_url
+#         self.createTask_data = createTask_data or {}
+#         self.getTaskResult_url = getTaskResult_url
 
 class Preference:
     """偏好设置"""
 
-    def __init__(self, geetest_url="", geetest_params=None, geetest_data=None):
+    def __init__(self, geetest_url="", geetest_params=None, geetest_data=None
+                 ,twocaptcha_api_key="", twocaptcha_userAgent=None, twocaptcha_server=""
+                 #  ,ttocr=None,
+                 ):
         self.geetest_url = geetest_url
         self.geetest_params = geetest_params or {}
         self.geetest_data = geetest_data or {}
-
+        # 2captcha api key
+        self.twocaptcha_api_key = twocaptcha_api_key
+        # 2captcha userAgent
+        self.twocaptcha_userAgent = twocaptcha_userAgent or "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+        self.twocaptcha_server = twocaptcha_server
+        # Ttocr 配置
+        # self.ttocr = Ttocr()  # 如果需要使用 Ttocr，可以添加这个字段
 
 class Config:
     """插件数据"""

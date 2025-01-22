@@ -30,7 +30,7 @@ class Login:
 
     # pylint: disable=too-many-return-statements
     def login(
-        self,
+            self,
     ) -> Union[Dict[str, str], bool]:
         """登录小米账号"""
         if not self.user_agent:
@@ -57,15 +57,15 @@ class Login:
             if repo_owner not in [None, "0-8-4"]:
                 return False
             if (
-                self.cookies != {}
-                and BaseSign(self.account).check_daily_tasks(nolog=True) != []
+                    self.cookies != {}
+                    and BaseSign(self.account).check_daily_tasks(nolog=True) != []
             ):
                 log.info("Cookie有效，跳过登录")
                 return self.cookies
             elif self.cookies.get("passToken") and (
-                cookies := self.get_cookies_by_passtk(
-                    user_id=self.uid, pass_token=self.cookies["passToken"]
-                )
+                    cookies := self.get_cookies_by_passtk(
+                        user_id=self.uid, pass_token=self.cookies["passToken"]
+                    )
             ):
                 log.info("Cookie无效，重新复写")
                 self.cookies.update(cookies)
@@ -87,7 +87,7 @@ class Login:
                 self.account.cookies["passToken"] = api_data.pass_token
                 self.account.uid = api_data.user_id
                 if cookies := self.get_cookies_by_passtk(
-                    api_data.user_id, api_data.pass_token
+                        api_data.user_id, api_data.pass_token
                 ):
                     self.account.cookies.update(cookies)
                     ConfigManager.write_plugin_data()
