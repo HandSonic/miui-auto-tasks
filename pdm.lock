@@ -5,10 +5,24 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:58a834b90d36bea3e9f55095bccd7a89e017df93709653ba77d0e1244b1f566f"
+content_hash = "sha256:c51cf1c784318ab402c0e9d7f953a05ef0f1904384d86eb95e337b7f0c4f6c72"
 
 [[metadata.targets]]
 requires_python = ">=3.11"
+
+[[package]]
+name = "2captcha-python"
+version = "1.5.1"
+requires_python = ">=3.6"
+summary = "Python module for easy integration with 2Captcha API"
+groups = ["default"]
+dependencies = [
+    "requests",
+]
+files = [
+    {file = "2captcha_python-1.5.1-py3-none-any.whl", hash = "sha256:d0a914fac273a2b24500e8f08274a5401822a113622371fa5408aa2726824c27"},
+    {file = "2captcha_python-1.5.1.tar.gz", hash = "sha256:6d4f496794f67b312c6e33b7a1b1c3cc24c40cf64b6d62c2595d0e35f91ace7c"},
+]
 
 [[package]]
 name = "annotated-types"
@@ -270,7 +284,7 @@ files = [
 
 [[package]]
 name = "onepush"
-version = "1.3.0"
+version = "1.4.0"
 requires_python = ">=3.6"
 summary = "A Python library to send notifications to your iPhone, Discord, Telegram, WeChat, QQ and DingTalk."
 groups = ["default"]
@@ -279,7 +293,8 @@ dependencies = [
     "requests",
 ]
 files = [
-    {file = "onepush-1.3.0-py3-none-any.whl", hash = "sha256:196af2e147a54381b5ffa32565f5f3955a0647328cc283812ce2f87f4bc09f47"},
+    {file = "onepush-1.4.0-py3-none-any.whl", hash = "sha256:b68e7c0b1e0da7295bc98a049da9e96992861dcb80685c2aafee3dc7e7aedbda"},
+    {file = "onepush-1.4.0.tar.gz", hash = "sha256:cae437c3ecc2a14e481162c80e4f42c26c4613cb8c9d58ccf3391522b2c3d033"},
 ]
 
 [[package]]
@@ -551,13 +566,13 @@ files = [
 
 [[package]]
 name = "tzdata"
-version = "2024.2"
+version = "2025.1"
 requires_python = ">=2"
 summary = "Provider of IANA time zone data"
 groups = ["default"]
 files = [
-    {file = "tzdata-2024.2-py2.py3-none-any.whl", hash = "sha256:a48093786cdcde33cad18c2555e8532f34422074448fbc874186f0abd79565cd"},
-    {file = "tzdata-2024.2.tar.gz", hash = "sha256:7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"},
+    {file = "tzdata-2025.1-py2.py3-none-any.whl", hash = "sha256:7e127113816800496f027041c570f50bcd464a020098a3b6b199517772303639"},
+    {file = "tzdata-2025.1.tar.gz", hash = "sha256:24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694"},
 ]
 
 [[package]]
