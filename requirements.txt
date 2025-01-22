@@ -7,3 +7,4 @@ qrcode==8.0
 Requests==2.32.3
 requests_toolbelt==1.0.0
 tenacity==9.0.0
+2captcha-python==1.5.1
