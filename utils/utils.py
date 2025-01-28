@@ -311,7 +311,7 @@ def get_token(uid: str) -> str | bool:
                 elif api_data.need_verify:
                     log.error("遇到人机验证码, 尝试调用解决方案")
                     url = api_data.data.get("url")
-                    token=get_token_by_captcha(url,True)
+                    token=get_token_by_captcha(url,False)
                     if token:
                         return token
                     else:
